@@ -7,3 +7,4 @@
 6，查看内容：cat readme.txt
 7，命令记录：git reflog
 8，可以用git status查看修改状态
+9，git diff; git diff --cached
