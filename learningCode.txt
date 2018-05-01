@@ -8,3 +8,4 @@
 7，命令记录：git reflog
 8，可以用git status查看修改状态
 9，git diff; git diff --cached
+10，工作区、缓冲区和仓库概率很重要
