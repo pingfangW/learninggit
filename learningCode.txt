@@ -1,0 +1,4 @@
+今天学习的git代码是：
+1，初始化一个Git仓库： git init
+2，添加文件，git add
+3，提交文件，git commit
