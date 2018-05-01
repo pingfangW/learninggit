@@ -2,3 +2,8 @@
 1，初始化一个Git仓库： git init
 2，添加文件，git add
 3，提交文件，git commit
+4，查看历史记录，git log，也可以看简洁版的，git log --pretty=online，可视化的：git-log-timeline
+5，把当前版本回退过去，git reset --hard HEAD^
+6，查看内容：cat readme.txt
+7，命令记录：git reflog
+
