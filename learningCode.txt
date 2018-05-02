@@ -19,3 +19,5 @@
 18，git reset HEAD~ learningCode.txt head后面还是要加~的
 19，reset HEAD是把本地仓库的head指针往前移动，把从head往后的内容复制到stage当中，checkout是把stage当中的复制到工作区
 20，创建和合并分支：查看分支：git branch；创建分支：git branch <name>； 切换分支： git checkout <name>；创建+切换分支：git checkout -b <name>；合并某分支到当前分支：git merge <name>；删除分支：git branch -d <name>
+21，在实际开发中，应该按照几个基本原则进行分支管理，首先master分支应该是非常稳定，仅用来发布新版本，平时不能在上面干活，所以一般在分支上干活，分支是不稳定的。
+22，在合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。
