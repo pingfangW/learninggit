@@ -7,5 +7,10 @@
 6，查看内容：cat readme.txt
 7，命令记录：git reflog
 8，可以用git status查看修改状态
-9，git diff; git diff --cached
-10，工作区、缓冲区和仓库概率很重要
+9，git diff; git diff --cached，好奇怪，为什么我add以后，git diff从第开始就一直都是绿色，有可能是我之前没有提交？
+10，工作区、缓冲区和仓库概率很重要，这三个的单词分别是working directory; repository(stage, master)
+11，关掉bash再打开会出现不能理解的问题，直接输入git commit也是，可以git init但是貌似这样把之前的信息就删掉了, init以后要注意文件目录，用cd，把目录改到自己指定的文件夹中
+12，fatal: not a git repository (or any of the parent directories): .git 很多说是本地管理仓库被删除了
+13，只有修改后add的才会被commit
+14，写错的还可以撤销；git checkout -- file; git reset HEAD file; git reset --hard head
+15，我的猜测，我们在电脑上运行写出来的文件所在位置是working directory,然后提交到Git上的位置叫repository，当我们add后，文件复制到stage，commit以后复制到master。
