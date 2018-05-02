@@ -14,3 +14,5 @@
 13，只有修改后add的才会被commit
 14，写错的还可以撤销；git checkout -- file; git reset HEAD file; git reset --hard head
 15，我的猜测，我们在电脑上运行写出来的文件所在位置是working directory,然后提交到Git上的位置叫repository，当我们add后，文件复制到stage，commit以后复制到master。
+16，15的猜测是错误的
+17，现在进行git的撤销修改操作，add以后进行checkout就不好使了
