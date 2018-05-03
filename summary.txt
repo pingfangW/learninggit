@@ -1,0 +1,74 @@
+关于廖雪峰Git教程总结
+
+0、首先使用git，无非是想更好的管理文档或者项目。能够方便的修改以及回溯修改过程。
+
+1、这里简要描述一下Git的大致框架：
+
+	  工作区        ——————>  本地仓库  ——————> 远程仓库
+(working directory)        (repository)        (remote)
+         |						|
+		 |________暂存区________|
+			 (stage or index)
+
+
+首先，[工作区]：我们会在电脑上建一个文件夹，并且在文件夹里放一些文档，比如A.txt，当我们直接对A.txt进行修改时，就认为是在[工作区]进行
+接着，[暂存区]：既然git是一个分布式系统，我们肯定需要提交，提交第一步是“git add”，这个操作是将A.txt“复制”了一份到[暂存区]
+然后，[本地仓库]：提交第二步是“git commit”，此时是将[暂存区]里的A.txt“复制”了一份到[本地仓库]
+最后，[远程仓库]：还可以将A.txt上传到网络上，这样可以随时在不同场合把项目“下载”下来，只需要“git push”一下即可上传到[远程仓库]
+注：这里的“复制”、“上传”用词并不准确，仅为易于思考
+
+2、接下来，先建一个仓库来加深对以上框架的理解：
+# 创建本地仓库（repository，也就是廖雪峰教程中的版本库）
+# 第一步就是建个空目录叫做learninggit, mkdir 就是make directory : mkdir learninggit
+# 然后把当前目录改成这个新建的目录 : pwd ; cd learninggit
+# 最后把这个目录变成git可以管理的仓库 : git init
+总结就是：
+mkdir learninggit
+pwd
+cd learninggit
+git init
+# 建好后仓库下就会多一个.git
+
+建好后，我们就可以在里面写文件啦，假设文档是A.txt
+保存到learninggit目录下，或者子目录下
+这时候A.txt在[工作区]里是存在的。[暂存区]、[本地仓库]和[远程仓库]还是空的
+执行：git add A.txt
+就从工作区复制了一份A.txt到[暂存区]啦
+执行：git commit -m"commit A.txt"
+就从暂存区复制一份A.txt到[本地仓库]啦
+执行：git push origin master
+就从本地仓库复制一份A.txt到[远程仓库]啦，不过这一步的前提是已经在GitHub等平台上注册好并建好远程仓库
+执行：git clone https://github.com/pingfangW/learninggit
+就从远程仓库复制一份A.txt到[工作区]啦
+
+用图形表示就是：
+
+		 <___________________git clone____________________
+	    |												  |
+	  工作区        ——————>  本地仓库  ———git push———> 远程仓库
+(working directory)        (repository)        (remote)
+         |						|
+	  git add				git commit
+		 |_______> 暂存区______>|
+			 (stage or index)
+
+
+3、接下来，用两个例子继续加深理解：
+git diff 表示的是工作区和暂存区的区别
+git diff --cached 表示的是暂存区和本地仓库的区别
+验证方法：
+手动修改A.txt的内容，并不add，那么工作区的A.txt是修改后的，暂存区还是之前的
+git diff后，结果显示修改前后的差别；git diff --cached不显示结果
+add后并不commit，那么工作区和暂存区都是修改后的，本地仓库还是之前的
+git diff不显示结果；git diff --cached显示修改前后的差别
+
+4、理解这个框架很重要，后续对文件进行修改、删除等都需要基于这个理解
+
+5、建立分支
+
+6、一些细节
+这部分主要记录我遇到的一些问题和解决方法
+比如，重新打开git Bash后，怎么样回到可以正常使用本地仓库的情景呢？
+pwd 然后在cd xxx 就可以了
+
+
